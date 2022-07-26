@@ -2,6 +2,18 @@
  1.Write HTML.
  2.Link the assets folders and APIs in the HTML.
  3.Write JavaScript.
+    -User sees search bar upon opening page
+    -User inputs city and hits search button
+        -- Get forecast info from openweather App
+            -fetch
+    -Weather forecast for user's city is displayed:
+        -Current conditions at top of page  
+            --BUILD IN HTML
+        -5-day outlook below that
+            --dynamic HTML generation
+                -- function -for loop
+        -Search history displayed on left side --STRETCH
+            --History buttons will search city --STRETCH
 
 ```
 AS A traveler
