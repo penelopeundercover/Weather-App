@@ -37,3 +37,24 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
+
+
+Array of forecast info. Pull off the parts of it you want.
+
+For-loop lines 48-56
+
+var forecastContainer = document.querySelector('#fiveday-forecast');
+
+Create div and style using setAttribute:
+var headingCol = document.createElement('div');
+Put the following h4 inside of the above div:
+  var heading = document.createElement('h4');
+
+  headingCol.setAttribute('class', 'col-12');
+
+Locate element by id and construct a card  append it to the main page
+Appending stuff into the div created on line 48
+  headingCol.append(heading);
+  forecastContainer.append(headingCol)
+
+
