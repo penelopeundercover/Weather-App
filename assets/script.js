@@ -38,12 +38,25 @@ function generateHTML(weatherData) {
   //Put current conditions here
   //Locate where you're going to create the card in your HTML
   var weatherDiv = document.querySelector(".weather-forecast");
+  var currentWeatherDiv = document.querySelector(".current-weather");
+  //Create a card
+  var card = document.createElement(`div`);
+  card.setAttribute("class", "card col");
+  //Add a p tag in the card with the temperature info
+  var temp = document.createElement(`p`);
+  temp.setAttribute("class", "card-text");
+  temp.textContent = `temp = ${weatherData.list[0].main.temp}`;
+  //Add the p tag to the card
+  card.append(temp);
+  //Add the card to the HTML
+  currentWeatherDiv.append(card);
+
   //Loop through the api result and create a new card each time through the loop.
   //We're only going to 5 because the array of info is super long.
-  for (var x = 0; x < 5; x++) {
+  for (var x = 1; x < 6; x++) {
     //Create a card
     var card = document.createElement(`div`);
-    card.setAttribute("class", "card col-12");
+    card.setAttribute("class", "card col");
     //Add a p tag in the card with the temperature info
     var temp = document.createElement(`p`);
     temp.setAttribute("class", "card-text");
@@ -59,24 +72,10 @@ function generateHTML(weatherData) {
 //const generateHTML = (weatherData) => {}
 //This way would allow you to use async/await, like if you had a function where you were calling an api, or if you had a button click.
 
-// function getCoordinates(city) {
-//   var coordinates = {
-//     long: "",
-//     lat: "",
-//   };
-//   fetch(
-//     "http://api.openweathermap.org/geo/1.0/direct?appid=${WEATHER_API_KEY}q=${city}&limit=1"
-//   )
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//     });
-
-//   //Do something to get it
-//   return coordinates;
-// }
+//Local storage--see project 1
+//getItem then json.parse (ex: var storedTodos = JSON.parse(localStorage.getItem("todos"));
+//stringify then setItem (ex: localStorage.setItem("todos", JSON.stringify(todos));
+//a button would be easier than an <a>
 
 function handleSearch(event) {
   event.preventDefault();
